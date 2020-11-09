@@ -25,7 +25,7 @@ from telethon.tl.types import (
 from fridaybot import ALIVE_NAME
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Who is this"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Gujju Userbot"
 FILLED_UP_DADDY = "Invalid pack selected."
 
 
@@ -52,27 +52,27 @@ async def _(event):
     userid = event.sender_id
     # packname = f"FRIDAY PACK"
     # packshortname = f"FRIDAY_{userid}_ns"  # format: Uni_Borg_userid
-    if userid == 1263617196:
-        packname = f"@StarkGang Packs 🎭"
-        packshortname = "StarkGangPack"
+    if userid == 1445368987:
+        packname = f"Mr.Lawliet Packs 🎭"
+        packshortname = "Mr_Lawliet_Pack"
     else:
         packname = f"@{user.username} KangPack {pack}"
-        packshortname = f"FRIDAY_{userid}_Pack"
+        packshortname = f"GUJJU_{userid}_STICKER_PACK"
     await moods.edit("`This Sticker is Gonna Get Stolen.....`")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@FRIDAYOT.png"
+    file_ext_ns_ion = "@GUJJUUSERBOT.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        if userid == 813878981:
-            packname = f"StarkGang Ka Pack"
-            packshortname = "StarkGangisgreat"
+        if userid == 1445368987:
+            packname = f"Mr.Lawliet Pack"
+            packshortname = "Mr_Lawliet_Animated_Pack"
         else:
             packname = f"@{user.username} KangPack {pack}"
-            packshortname = f"FRIDAY_{userid}"  # format: Uni_Borg_userid
+            packshortname = f"GUJJU_{userid}_ANIMATED_STICKER_PACK"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await moods.edit("Invalid message type")
         return
@@ -130,14 +130,14 @@ async def _(event):
                 while response.text == FILLED_UP_DADDY:
                     pack += 1
                     prevv = int(pack) - 1
-                    packname = f"{user.username}'s {pack}"
-                    packshortname = f"Vol_{pack}_with_{user.username}"
-                    # if userid == 948408212:
-                    # packname = f"{user.username}'s {pack}"
-                    # packshortname = "Vol._{pack}_FRIDAY_ke_locker_me"
+                    packname = f"@{user.username} 's {pack}"
+                    packshortname = f"Vol_{pack}_With_{user.username}"
+                    # if userid == 1445368987:
+                    # packname = f"Mr.L 's Pack vol.{pack}"
+                    # packshortname = "Lawliet_Vol_{pack}_GUJJU_NA_LOCKER_MA"
                     # else:
-                    # packname = f"Vol._{pack}_FRIDAY{userid}"
-                    # packshortname = f"Vol._{pack}_Friday_{userid}_ns"
+                    # packname = f"Vol_{pack}_GUJJU_{userid}"
+                    # packshortname = f"Vol_{pack}_Gujju_{userid}_Mojilo"
                     if not await stickerset_exists(bot_conv, packshortname):
                         await moods.edit(
                             "**Pack No. **"
