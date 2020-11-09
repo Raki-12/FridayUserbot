@@ -6,8 +6,8 @@ import requests
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
-@friday.on(friday_on_cmd("ttt ?(.*)"))
-@friday.on(sudo_cmd("ttt ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd("trump ?(.*)"))
+@friday.on(sudo_cmd("trump ?(.*)", allow_sudo=True))
 async def noobishere(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
