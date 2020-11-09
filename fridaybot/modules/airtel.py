@@ -28,7 +28,7 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-            "`Connecting To MTN NG ....`",
+            "`Connecting To AIRTEL HQ ....`",
             "`█ ▇ ▆ ▅ ▄ ▂ ▁`",
             "`▒ ▇ ▆ ▅ ▄ ▂ ▁`",
             "`▒ ▒ ▆ ▅ ▄ ▂ ▁`",
@@ -46,7 +46,7 @@ async def _(event):
             "`▁ ▂ ▄ ▅ ▆ ▒ ▒`",
             "`▁ ▂ ▄ ▅ ▆ ▇ ▒`",
             "`▁ ▂ ▄ ▅ ▆ ▇ █`",
-            "**MTN Network Boosted....**",
+            "**AIRTEL Network Boosted....**",
         ]
 
         for i in animation_ttl:
