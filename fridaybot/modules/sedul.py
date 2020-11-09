@@ -1,17 +1,17 @@
 """Schedule Plugin for @UniBorg
-Syntax: .schd <time_in_seconds> ;=; <message to send>"""
+Syntax: .sedul <time_in_seconds> ;=; <message to send>"""
 import asyncio
 
 from fridaybot.utils import friday_on_cmd
 
 
-@friday.on(friday_on_cmd("schd ?(.*)"))
+@friday.on(friday_on_cmd("sedul ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     ttl = 0
-    message = "SYNTAX: `.schd <time_in_seconds> = <message to send>`"
+    message = "SYNTAX: `.sedul <time_in_seconds> = <message to send>`"
     if input_str:
         await event.delete()
         if "=" in input_str:
