@@ -5,7 +5,7 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from uniborg.util import friday_on_cmd
 
 
-@friday.on(friday_on_cmd("listmyusernames"))
+@friday.on(friday_on_cmd("reserved"))
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())
