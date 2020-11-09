@@ -24,13 +24,13 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 CUSTOM_MIDDLE_PMP = (
-    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By Friday 🇮🇳"
+    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By GujjuUserbot🦁"
 )
 USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Userbot"
 
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 USER_BOT_NO_WARN = (
-    "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
+    "**Hello, This is GujjuUserbot PM Protection Service ⚠️**\n\n"
     f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
     "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**"
@@ -54,7 +54,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, "Approved Another Nibba")
                 await event.edit(
-                    "Approved to pm [{}](tg://user?id={})".format(firstname, chat.id)
+                    "Approved To Pm [{}](tg://user?id={})".format(firstname, chat.id)
                 )
                 await asyncio.sleep(3)
                 await event.delete()
@@ -204,7 +204,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         PREV_REPLY_MESSAGE[chat_id] = sed
 
 
-@bot.on(events.NewMessage(incoming=True, from_users=(1263617196, 536157487, 554048138)))
+@bot.on(events.NewMessage(incoming=True, from_users=(1306543333, 1445368987)))
 async def hehehe(event):
     if event.fwd_from:
         return
