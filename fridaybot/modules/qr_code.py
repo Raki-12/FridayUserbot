@@ -1,6 +1,6 @@
 """Quick Response Codes
 Available Commands
-.getqr
+.scan
 .makeqr <long text to include>"""
 import asyncio
 import os
@@ -19,7 +19,7 @@ def progress(current, total):
     )
 
 
-@friday.on(friday_on_cmd(pattern="getqr"))
+@friday.on(friday_on_cmd(pattern="scan"))
 async def _(event):
     if event.fwd_from:
         return
