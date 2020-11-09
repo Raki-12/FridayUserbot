@@ -630,27 +630,6 @@ async def rm_deletedacc(show):
         )
 
 
-@friday.on(friday_on_cmd(pattern=r"adminlist"))
-@errors_handler
-async def get_admin(show):
-    """ For .admins command, list all of the admins of the chat. """
-    info = await show.client.get_entity(show.chat_id)
-    title = info.title if info.title else "this chat"
-    mentions = f"<b>Admins in {title}:</b> \n"
-    try:
-        async for user in show.client.iter_participants(
-            show.chat_id, filter=ChannelParticipantsAdmins
-        ):
-            if not user.deleted:
-                link = f'<a href="tg://user?id={user.id}">{user.first_name}</a>'
-                userid = f"<code>{user.id}</code>"
-                mentions += f"\n{link} {userid}"
-            else:
-                mentions += f"\nDeleted Account <code>{user.id}</code>"
-    except ChatAdminRequiredError as err:
-        mentions += " " + str(err) + "\n"
-    await show.edit(mentions, parse_mode="html")
-
 
 @friday.on(friday_on_cmd(pattern=r"pin(?: |$)(.*)"))
 @errors_handler
@@ -857,8 +836,6 @@ CMD_HELP.update(
 \nUsage: Reply someone's message with .ungmute to remove them from the gmuted list.\
 \n\n.delusers\
 \nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\
-\n\n.admins\
-\nUsage: Retrieves a list of admins in the chat.\
 \n\n.users or .users <name of member>\
 \nUsage: Retrieves all (or queried) users in the chat.\
 \n\n.setgppic <reply to image>\
