@@ -1,5 +1,5 @@
 """Send Chat Actions
-Syntax: .scha <option> <time in sec>
+Syntax: .do <option> <time in sec>
         scha options: Options for sca 
 
 typing
@@ -18,7 +18,7 @@ import asyncio
 from uniborg.util import friday_on_cmd
 
 
-@friday.on(friday_on_cmd("scha ?(.*)"))
+@friday.on(friday_on_cmd("do ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
