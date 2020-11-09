@@ -5,18 +5,18 @@ from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from fridaybot.utils import friday_on_cmd
 
 
-@friday.on(friday_on_cmd("get_bot ?(.*)"))
+@friday.on(friday_on_cmd("bots ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Bots in this Channel**: \n"
+    mentions = "**Bots In This Chat** : \n"
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
     chat = None
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "Bots in {} channel: \n".format(input_str)
+        mentions = "Bots In {} Chat : \n".format(input_str)
         try:
             chat = await borg.get_entity(input_str)
         except Exception as e:
