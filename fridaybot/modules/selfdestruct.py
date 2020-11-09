@@ -1,4 +1,4 @@
-# For @UniBorg
+# For @GujjuUserbot
 # courtesy Yasir siddiqui
 """Self Destruct Plugin
 .sd <time in seconds> <text>
