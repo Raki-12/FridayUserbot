@@ -1,5 +1,5 @@
 """ Get the Bots in any chat*
-Syntax: .get_bot"""
+Syntax: .bots"""
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 
 from fridaybot.utils import friday_on_cmd
