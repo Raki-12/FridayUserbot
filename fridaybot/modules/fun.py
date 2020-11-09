@@ -31,16 +31,7 @@ RAPE_STRINGS = [
     "`Rape coming... Raped! haha 😆`",
     "`Lodu Andha hai kya Yaha tera rape ho raha hai aur tu abhi tak yahi gaand mara raha hai lulz`",
 ]
-ABUSE_STRINGS = [
-    "`Madharchod`",
-    "`Gaandu`",
-    "`Chutiya he rah jaye ga`",
-    "`Ja be Gaandu`",
-    "`Ma ka Bhodsa madharchod`",
-    "`mml`",
-    "`You MotherFukcer`",
-    "`Muh Me Lega Bhosdike ?`",
-]
+
 GEY_STRINGS = [
     "`you gey bsdk`",
     "`you gey`",
@@ -141,16 +132,6 @@ async def _(event):
     reply_text = PRO_STRINGS[bro]
     await edit_or_reply(event, reply_text)
 
-
-@friday.on(friday_on_cmd(pattern="abusee ?(.*)"))
-@friday.on(sudo_cmd(pattern="abusee ?(.*)", allow_sudo=True))
-async def _(event):
-    if event.fwd_from:
-        return
-    bro = random.randint(0, len(ABUSE_STRINGS) - 1)
-    event.pattern_match.group(1)
-    reply_text = ABUSE_STRINGS[bro]
-    await edit_or_reply(event, reply_text)
 
 
 @friday.on(friday_on_cmd(pattern="geyy ?(.*)"))
