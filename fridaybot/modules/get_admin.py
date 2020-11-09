@@ -15,7 +15,7 @@ async def _(event):
     admeme = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
-    mentions = "**Admins in this Channel**: \n"
+    mentions = "**Admins In This Chat**: \n"
     should_mention_admins = False
     reply_message = None
     pattern_match_str = event.pattern_match.group(1)
