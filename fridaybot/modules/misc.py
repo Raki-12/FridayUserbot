@@ -12,22 +12,7 @@ from time import sleep
 
 from fridaybot.events import register
 
-
-@register(outgoing=True, pattern="^.random")
-async def randomise(items):
-    """ For .random command, get a random item from the list of items. """
-    if not items.text[0].isalpha() and items.text[0] not in ("/", "#", "@", "!"):
-        itemo = (items.text[8:]).split()
-        index = randint(1, len(itemo) - 1)
-        await items.edit(
-            "**Query: **\n`"
-            + items.text[8:]
-            + "`\n**Output: **\n`"
-            + itemo[index]
-            + "`"
-        )
-
-
+ 
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
 async def sleepybot(time):
     """ For .sleep command, let the fridaybot snooze for a few second. """
