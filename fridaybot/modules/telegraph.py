@@ -2,6 +2,7 @@
 Available Commands:
 .telegraph media as reply to a media
 .telegraph text as reply to a large text"""
+
 import os
 from datetime import datetime
 
@@ -97,7 +98,7 @@ async def _(event):
             )
     else:
         await event.edit(
-            "Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)"
+            "Reply to a message to get a permanent telegra.ph link. "
         )
 
 
