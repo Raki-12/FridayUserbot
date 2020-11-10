@@ -1322,8 +1322,7 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-        "memes": "
-\n\n.cp\
+        "memes": "\n\n.cp\
 \nUsage: Copypasta the famous meme\
 \n\n.vapor\
 \nUsage: Vaporize everything!\
