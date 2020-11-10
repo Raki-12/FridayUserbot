@@ -14,7 +14,6 @@ import time
 from collections import deque
 
 import requests
-from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
@@ -648,32 +647,6 @@ HIT = [
 # ===========================================
 
 
-@register(outgoing=True, pattern=r"^.(\w+)say (.*)")
-async def univsaye(cowmsg):
-    """ For .cowsay module, fridaybot wrapper for cow which says things. """
-    if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
-        arg = cowmsg.pattern_match.group(1).lower()
-        text = cowmsg.pattern_match.group(2)
-
-        if arg == "cow":
-            arg = "default"
-        if arg not in cow.COWACTERS:
-            return
-        cheese = cow.get_cow(arg)
-        cheese = cheese()
-
-        await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
-
-
-@register(outgoing=True, pattern="^:/$")
-async def kek(keks):
-    if not keks.text[0].isalpha() and keks.text[0] not in ("/", "#", "@", "!"):
-        """ Check yourself ;)"""
-        uio = ["/", "\\"]
-        for i in range(1, 15):
-            time.sleep(0.3)
-            await keks.edit(":" + uio[i % 2])
-
 
 @register(outgoing=True, pattern=r"^.coinflip (.*)")
 async def _(event):
@@ -783,15 +756,6 @@ async def slap(replied_user, event):
     return caption
 
 
-@register(outgoing=True, pattern="^-_-$")
-async def lol(lel):
-    if not lel.text[0].isalpha() and lel.text[0] not in ("/", "#", "@", "!"):
-        """ Ok... """
-        okay = "-_-"
-        for _ in range(10):
-            okay = okay[:-1] + "_-"
-            await lel.edit(okay)
-
 
 @register(outgoing=True, pattern="^.decide$")
 async def _(event):
@@ -811,13 +775,6 @@ async def _(event):
         await event.delete()
 
 
-@register(outgoing=True, pattern="^;_;$")
-async def fun(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        t = ";__;"
-        for j in range(10):
-            t = t[:-1] + "_;"
-            await e.edit(t)
 
 
 @register(outgoing=True, pattern="^.cry$")
@@ -895,13 +852,6 @@ async def vapor(vpr):
 
         await vpr.edit("".join(reply_text))
 
-
-@register(outgoing=True, pattern="^.repo$")
-async def source(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit(
-            "Hello , User I Am Using [FridayUserbot](https://github.com/Starkgang/FridayUserbot) ! Worth A Try 😌"
-        )
 
 
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
@@ -1372,16 +1322,7 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-        "memes": ".cowsay\
-\nUsage: cow which says things.\
-\n\n.milksay\
-\nUsage: Weird Milk that can speak\
-\n\n:/\
-\nUsage: Check yourself ;)\
-\n\n-_-\
-\nUsage: Ok...\
-\n\n;_;\
-\nUsage: Like `-_-` but crying.\
+        "memes": "
 \n\n.cp\
 \nUsage: Copypasta the famous meme\
 \n\n.vapor\
