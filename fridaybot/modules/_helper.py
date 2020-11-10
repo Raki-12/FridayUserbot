@@ -21,7 +21,7 @@ async def cmd_list(event):
                 await event.edit(string)
         elif input_str:
             if input_str in CMD_LIST:
-                string = "Commands Found In {} :\n".format(input_str)
+                string = "Commands found in {}:\n".format(input_str)
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
@@ -29,10 +29,12 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = """Gujju Userbot Modules Are Listed Here!\n
-• Userbot Of L \n• Assistant Bot - @WatariRobot"""
+            help_string = """Friday Userbot Modules Are Listed Here !\n
+\n• Userbot Of L \n• Assistant Bot - @WatariRobot"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
             )
-            await results[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)                                                         
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
             await event.delete()
