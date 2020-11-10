@@ -1,5 +1,5 @@
 """Get Administrators of any Chat*
-Syntax: .get_admin"""
+Syntax: .admins"""
 from telethon.tl.types import (
     ChannelParticipantAdmin,
     ChannelParticipantCreator,
