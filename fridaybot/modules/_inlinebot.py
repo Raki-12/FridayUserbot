@@ -10,7 +10,7 @@ from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
+    WARN_PIC = "https://telegra.ph/file/b43a0adfe79eaa35faa04.png"
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
@@ -39,10 +39,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.inline("Show Stats ", data="terminator")],
                     [
                         Button.url(
-                            "Repo 🇮🇳", "https://github.com/StarkGang/FridayUserbot"
+                            "Hinata", "https://t.me/MissHinata_Bot"
                         )
                     ],
-                    [Button.url("Join Channel ❤️", "t.me/Fridayot")],
+                    [Button.url("Lilly", "t.me/MissLilly_Bot")],
                 ],
             )
         if event.query.user_id == bot.uid and query.startswith("**Hello"):
@@ -74,7 +74,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_popp_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_popp_up_alert = "Ye Tumhare Bap Ka Userbot Ny He, Apna Use Kar Bish!"
             await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -91,7 +91,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Ye Tumhare Bap Ka Userbot Ny He, Apna Use Kar Bish!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -101,7 +101,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if not event.query.user_id == bot.uid:
-            sedok = "Who The Fuck Are You? Get Your Own Friday."
+            sedok = "Thij Ij Not Yor Father's Userbot, Use Your 🖕🏻"
             await event.answer(sedok, cache_time=0, alert=True)
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
@@ -139,13 +139,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             text = inlinestats
             await event.answer(text, alert=True)
         else:
-            txt = "You Can't View My Masters Stats"
+            txt = "You Can't View My Boss Stats"
             await event.answer(txt, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
     async def rip(event):
         await event.get_chat()
-        text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By UserBot. 🇮🇳"
+        text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By UserBot🦁"
         await event.edit("Choice Not Accepted ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
@@ -159,7 +159,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.get_chat()
         him_id = event.query.user_id
         await event.edit("Choice Accepted ✔️")
-        text2 = "Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
+        text2 = "Ok. Please Wait Until My Boss Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
         await borg.send_message(event.query.user_id, text2)
         await tgbot.send_message(
             LOG_CHAT,
@@ -171,7 +171,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def rip(event):
         await event.get_chat()
         await event.edit("Choice Accepted ✔️")
-        text3 = "Ok, Wait. You can Ask After Master Approves You. Kindly, Wait."
+        text3 = "Ok, Wait. You can Ask After Boss Approves You. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
         await tgbot.send_message(
             LOG_CHAT,
