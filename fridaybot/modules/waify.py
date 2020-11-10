@@ -18,15 +18,13 @@ def progress(current, total):
     )
 
 
-@friday.on(friday_on_cmd(pattern="p"))
+@friday.on(friday_on_cmd(pattern="w"))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
     BASE_URL = "http://www.google.com"
-    OUTPUT_STR = "I am gonna CHEAT NOW DA HELL IS THE NAME??????????"
     if event.reply_to_msg_id:
-        await event.edit("hEHE I FOUND NAME OF THIS BITCH")
         previous_message = await event.get_reply_message()
         previous_message_text = previous_message.message
         if previous_message.media:
@@ -53,7 +51,6 @@ async def _(event):
             request_url = SEARCH_URL.format(BASE_URL, previous_message_text)
             google_rs_response = requests.get(request_url, allow_redirects=False)
             the_location = google_rs_response.headers.get("Location")
-        await event.edit(".")
         headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
         }
