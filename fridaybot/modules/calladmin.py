@@ -3,7 +3,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import friday_on_cmd
 
 
-@friday.on(friday_on_cmd(pattern="admin"))
+@friday.on(friday_on_cmd(pattern="admim"))
 async def _(event):
     if event.fwd_from:
         return
