@@ -1,6 +1,5 @@
 Pillow>=5.3.0
 PyGithub
-youtube-dl
 git+https://github.com/StarkGang/Telethon.git
 iplookup
 git+https://github.com/Starkgangs/pydl.git
@@ -14,8 +13,6 @@ beautifulsoup4
 bs4
 bwb==3.0.0
 cfscrape
-coffeehouse
-cowpy
 cryptg
 dnspython
 emoji
@@ -58,9 +55,5 @@ telegraph
 tswift
 urbandict>=0.5
 wikipedia>=1.4.0
-youtube-dl
-covid
 validators
-youtube-search
-youtube-search-python
 wget
