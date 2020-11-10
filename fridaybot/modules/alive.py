@@ -1,5 +1,5 @@
-"""Check if fridaybot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
-# CREDITS: @WhySooSerious, @Sur_vivor
+"""Check if GujjuBot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
+
 import time
 
 from uniborg.util import friday_on_cmd, sudo_cmd
