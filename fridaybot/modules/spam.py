@@ -107,7 +107,7 @@ async def spammer(e):
                 await reply_to_id.reply(spam_message)
             else:
                 await e.client.send_message(e.chat_id, spam_message)
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(2)
         
     elif reply_to_id.media:
         to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
@@ -142,7 +142,7 @@ async def spammer(e):
                 await reply_to_id.reply(spam_message)
             else:
                 await e.client.send_message(e.chat_id, spam_message)
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(2)
         
     else:
         await edit_or_reply(e, "try again something went wrong or check `.info spam`")
