@@ -24,8 +24,8 @@ async def _(event):
     translated = translator.translate(text, dest=lan)
     after_tr_text = translated.text
     output_str = (
-        f"**Translated By Watari Transaction Company Ltd.** \n"
-        f"Source {translated.src} \nTranslation {lan} \nWhat I Can Translate From This {after_tr_text}"
+        f"**Translated By Watari Transaction Company Ltd.** \n\n"
+        f"•Source {translated.src} \n•Translation {lan} \n>>>   {after_tr_text}   <<<"
     )
     try:
         await tgbot.send_message(event.chat_id, output_str)
