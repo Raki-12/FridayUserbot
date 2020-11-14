@@ -18,7 +18,8 @@ def progress(current, total):
     )
 
 
-@friday.on(friday_on_cmd(pattern="p"))
+@register(outgoing=True, pattern=r"^.protecc (?: |$)(\d*)")
+@errors_handler
 async def _(event):
     if event.fwd_from:
         return
