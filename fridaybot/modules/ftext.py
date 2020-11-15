@@ -1,7 +1,7 @@
 from uniborg.util import friday_on_cmd
 
 
-@friday.on(friday_on_cmd(pattern="ftext ?(.*)"))
+@friday.on(friday_on_cmd(pattern="f ?(.*)"))
 async def payf(event):
     input_str = event.pattern_match.group(1)
     if input_str:
