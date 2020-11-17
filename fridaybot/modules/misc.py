@@ -5,7 +5,6 @@
 #
 # You can find misc modules, which dont fit in anything xD
 """ Userbot module for other small commands. """
-from random import randint
 from time import sleep
 
 from fridaybot.events import register
@@ -25,7 +24,6 @@ async def sleepybot(time):
             if LOGGER:
                 await time.client.send_message(
                     LOGGER_GROUP,
-                    "You put the bot to sleep for " + str(counter) +
-                    " seconds",
+                    "You put the bot to sleep for " + str(counter) + " seconds",
                 )
             sleep(counter)

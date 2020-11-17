@@ -6,7 +6,8 @@ from uniborg.util import friday_on_cmd
 async def test(event):
     if event.fwd_from:
         return
-    await event.edit("""☁☁🌞      ☁           ☁
+    await event.edit(
+        """☁☁🌞      ☁           ☁
        ☁  ✈         ☁    🚁    ☁    ☁        ☁          ☁     ☁   ☁
 
 🏬🏨🏫🏢🏤🏥🏦🏪🏫
@@ -15,15 +16,15 @@ async def test(event):
         🌲/   🚖   l         \ 🌳
            /🚶       |     🚍  \ 🌴🚴
      🌴/             |             \🌲
-   🌲/         🚔  |       🚘   \🌳""")
+   🌲/         🚔  |       🚘   \🌳"""
+    )
 
 
 @friday.on(friday_on_cmd(pattern=r"hello"))
 async def hi(event):
     if event.fwd_from:
         return
-    await event.edit(
-        "🌺✨✨🌺✨🌺🌺🌺\n🌺✨✨🌺✨✨🌺✨\n🌺🌺🌺🌺✨✨🌺✨\n🌺✨✨🌺✨✨🌺✨\n🌺✨✨🌺✨🌺🌺🌺\n☁☁☁☁☁☁☁☁")
+    await event.edit("🌺✨✨🌺✨🌺🌺🌺\n🌺✨✨🌺✨✨🌺✨\n🌺🌺🌺🌺✨✨🌺✨\n🌺✨✨🌺✨✨🌺✨\n🌺✨✨🌺✨🌺🌺🌺\n☁☁☁☁☁☁☁☁")
 
 
 @friday.on(friday_on_cmd(pattern=r"cheer"))
@@ -39,8 +40,7 @@ async def cheer(event):
 async def getwell(event):
     if event.fwd_from:
         return
-    await event.edit(
-        "🌹🌹🌹🌹🌹🌹🌹🌹 \n🌹😷😢😓😷😢💨🌹\n🌹💝💉🍵💊💐💝🌹\n🌹 GetBetter Soon! 🌹\n🌹🌹🌹🌹🌹🌹🌹🌹")
+    await event.edit("🌹🌹🌹🌹🌹🌹🌹🌹 \n🌹😷😢😓😷😢💨🌹\n🌹💝💉🍵💊💐💝🌹\n🌹 GetBetter Soon! 🌹\n🌹🌹🌹🌹🌹🌹🌹🌹")
 
 
 @friday.on(friday_on_cmd(pattern=r"sprinkle"))

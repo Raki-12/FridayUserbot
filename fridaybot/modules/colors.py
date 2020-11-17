@@ -2,8 +2,7 @@
 Syntax: .color <color_code>"""
 import os
 
-from PIL import Image
-from PIL import ImageColor
+from PIL import Image, ImageColor
 
 from fridaybot.utils import friday_on_cmd
 
