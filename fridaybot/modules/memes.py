@@ -647,7 +647,6 @@ HIT = [
 # ===========================================
 
 
-
 @register(outgoing=True, pattern=r"^.coinflip (.*)")
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -751,10 +750,10 @@ async def slap(replied_user, event):
     hit = random.choice(HIT)
     throw = random.choice(THROW)
 
-    caption = "..." + temp.format(victim=slapped, item=item, hits=hit, throws=throw)
+    caption = "..." + temp.format(victim=slapped,
+                                  item=item, hits=hit, throws=throw)
 
     return caption
-
 
 
 @register(outgoing=True, pattern="^.decide$")
@@ -773,8 +772,6 @@ async def _(event):
             file=r["image"],
         )
         await event.delete()
-
-
 
 
 @register(outgoing=True, pattern="^.cry$")
@@ -853,7 +850,6 @@ async def vapor(vpr):
         await vpr.edit("".join(reply_text))
 
 
-
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
 async def stretch(stret):
     """ Stretch it."""
@@ -902,11 +898,14 @@ async def zal(zgfy):
                 randint = random.randint(0, 2)
 
                 if randint == 0:
-                    charac = charac.strip() + random.choice(ZALG_LIST[0]).strip()
+                    charac = charac.strip() + \
+                        random.choice(ZALG_LIST[0]).strip()
                 elif randint == 1:
-                    charac = charac.strip() + random.choice(ZALG_LIST[1]).strip()
+                    charac = charac.strip() + \
+                        random.choice(ZALG_LIST[1]).strip()
                 else:
-                    charac = charac.strip() + random.choice(ZALG_LIST[2]).strip()
+                    charac = charac.strip() + \
+                        random.choice(ZALG_LIST[2]).strip()
 
             reply_text.append(charac)
 
@@ -1092,7 +1091,6 @@ async def iqless(e):
         await e.edit("♿")
 
 
-
 @register(outgoing=True, pattern="^.clock$")
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -1241,10 +1239,12 @@ async def download_video(v_url):
                 progressive=True, subtype="mp4", res=quality
             ).first()
         else:
-            video_stream = video.streams.filter(progressive=True, subtype="mp4").first()
+            video_stream = video.streams.filter(
+                progressive=True, subtype="mp4").first()
 
         if video_stream is None:
-            all_streams = video.streams.filter(progressive=True, subtype="mp4").all()
+            all_streams = video.streams.filter(
+                progressive=True, subtype="mp4").all()
             available_qualities = ""
 
             for item in all_streams[:-1]:

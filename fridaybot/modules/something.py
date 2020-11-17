@@ -3,7 +3,6 @@
 from uniborg.util import friday_on_cmd
 
 
-
 @friday.on(friday_on_cmd(pattern=r"city"))
 async def test(event):
     if event.fwd_from:

@@ -133,7 +133,6 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-
 @friday.on(friday_on_cmd(pattern="geyy ?(.*)"))
 @friday.on(sudo_cmd(pattern="geyy ?(.*)", allow_sudo=True))
 async def _(event):

@@ -12,7 +12,7 @@ from time import sleep
 
 from fridaybot.events import register
 
- 
+
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
 async def sleepybot(time):
     """ For .sleep command, let the fridaybot snooze for a few second. """
@@ -27,6 +27,7 @@ async def sleepybot(time):
             if LOGGER:
                 await time.client.send_message(
                     LOGGER_GROUP,
-                    "You put the bot to sleep for " + str(counter) + " seconds",
+                    "You put the bot to sleep for " +
+                    str(counter) + " seconds",
                 )
             sleep(counter)

@@ -19,7 +19,6 @@ async def leave(e):
             await e.edit("`But Boss! This is Not A Chat`")
 
 
-
 @friday.on(friday_on_cmd("yo$"))
 # @register(outgoing=True, pattern="^yo$")
 async def Yooo(e):
@@ -27,7 +26,6 @@ async def Yooo(e):
     for j in range(15):
         t = t[:-1] + "oo"
         await e.edit(t)
-
 
 
 CMD_HELP.update({"leave": "Leave a Chat"})

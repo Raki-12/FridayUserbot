@@ -51,4 +51,3 @@ async def _(event):
     await event.edit("Created sticker in {} seconds".format(time_taken_ms))
     await asyncio.sleep(5)
     await event.delete()
-
