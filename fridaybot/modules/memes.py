@@ -750,8 +750,7 @@ async def slap(replied_user, event):
     hit = random.choice(HIT)
     throw = random.choice(THROW)
 
-    caption = "..." + temp.format(victim=slapped,
-                                  item=item, hits=hit, throws=throw)
+    caption = "..." + temp.format(victim=slapped, item=item, hits=hit, throws=throw)
 
     return caption
 
@@ -898,14 +897,11 @@ async def zal(zgfy):
                 randint = random.randint(0, 2)
 
                 if randint == 0:
-                    charac = charac.strip() + \
-                        random.choice(ZALG_LIST[0]).strip()
+                    charac = charac.strip() + random.choice(ZALG_LIST[0]).strip()
                 elif randint == 1:
-                    charac = charac.strip() + \
-                        random.choice(ZALG_LIST[1]).strip()
+                    charac = charac.strip() + random.choice(ZALG_LIST[1]).strip()
                 else:
-                    charac = charac.strip() + \
-                        random.choice(ZALG_LIST[2]).strip()
+                    charac = charac.strip() + random.choice(ZALG_LIST[2]).strip()
 
             reply_text.append(charac)
 
@@ -1239,12 +1235,10 @@ async def download_video(v_url):
                 progressive=True, subtype="mp4", res=quality
             ).first()
         else:
-            video_stream = video.streams.filter(
-                progressive=True, subtype="mp4").first()
+            video_stream = video.streams.filter(progressive=True, subtype="mp4").first()
 
         if video_stream is None:
-            all_streams = video.streams.filter(
-                progressive=True, subtype="mp4").all()
+            all_streams = video.streams.filter(progressive=True, subtype="mp4").all()
             available_qualities = ""
 
             for item in all_streams[:-1]:
