@@ -1,6 +1,5 @@
 """Dictionary Plugin for @GujjuUserbot
 Syntax: .meaning <word>"""
-
 import requests
 from uniborg.util import friday_on_cmd
 
